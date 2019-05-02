@@ -8,10 +8,13 @@ INCLUDES=./
 
 all: $(NAME)
 
-$(NAME): $(SRCS) libft.h
-	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+$(NAME): 
+	gcc -Wall -Wextra -Werror -c $(SRCS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+
+bin:
+	gcc -Wall -Wextra -Werror $(SRCS)
 
 clean:
 	@/bin/rm -f $(OBJECTS)

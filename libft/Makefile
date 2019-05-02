@@ -12,6 +12,8 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRCS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+bin:
+	gcc -Wall -Wextra -Werror $(SRCS)
 
 bin:
 	gcc -Wall -Wextra -Werror $(SRCS)

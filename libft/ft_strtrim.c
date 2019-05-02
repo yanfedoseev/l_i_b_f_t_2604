@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s)
 	while (s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
 		j--;
 	if (i > j)
-		return ("");
+		return (ft_strnew(0));
 	if (!(res = ft_strnew(j - i + 1)))
 		return (NULL);
 	k = 0;

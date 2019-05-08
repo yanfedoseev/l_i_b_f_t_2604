@@ -9,6 +9,15 @@
 /*   Updated: 2019/05/02 17:31:47 by gmarin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+<<<<<<< HEAD
+=======
+
+#include "libft.h"
+
+int		count_words(char const *str, char c)
+{
+	int		j;
+>>>>>>> d8096c0ee8d4956432a6d2777cef3b4d77a0db1d
 
 #include "libft.h"
 

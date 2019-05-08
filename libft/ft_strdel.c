@@ -18,5 +18,8 @@ void	ft_strdel(char **as)
 	{
 		free(*as);
 		*as = NULL;
+<<<<<<< HEAD
 	}
+=======
+>>>>>>> d8096c0ee8d4956432a6d2777cef3b4d77a0db1d
 }

@@ -11,13 +11,36 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+<<<<<<< HEAD
+=======
+
+int		mylen(int n)
+{
+	int 	tmp;
+	int 	len;
+
+	tmp = n;
+	len = 1;
+	while (tmp / 10 != 0)
+	{
+		tmp /= 10;
+		len++;
+	}
+	return ((n < 0) ? len + 1 : len);
+}
+
+>>>>>>> d8096c0ee8d4956432a6d2777cef3b4d77a0db1d
 
 char	*ft_itoa(int n)
 {
 	int		len;
 	char	*res;
 
+<<<<<<< HEAD
 	len = ft_nmbrlen(n);
+=======
+	len = mylen(n);
+>>>>>>> d8096c0ee8d4956432a6d2777cef3b4d77a0db1d
 	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	res[len] = '\0';

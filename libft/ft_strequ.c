@@ -14,7 +14,11 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+<<<<<<< HEAD
 	if (s1 != NULL && s2 != NULL)
 		return (!(ft_strcmp(s1, s2)));
 	return (0);
+=======
+	return (!(ft_strcmp(s1, s2)));
+>>>>>>> d8096c0ee8d4956432a6d2777cef3b4d77a0db1d
 }

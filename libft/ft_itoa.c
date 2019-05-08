@@ -1,53 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmarin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/02 17:19:23 by gmarin            #+#    #+#             */
+/*   Updated: 2019/05/02 17:19:25 by gmarin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-int		mylen(int n)
-{
-	int 	tmp;
-	int 	len;
-
-	tmp = n;
-	len = 0;
-	while (tmp)
-	{
-		tmp /= 10;
-		len++;
-	}
-	return (len);
-}
-
-void	mynegative(int *n, int *len, char *sign)
-{
-	*sign = 'p';
-
-	if (*n < 0)
-	{
-		(*len)++;
-		*sign = 'n';
-		*n *= -1;
-	}
-}
 
 char	*ft_itoa(int n)
 {
 	int		len;
-	char	sign;
 	char	*res;
 
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
-	len = mylen(n);
-	mynegative(&n, &len, &sign);
+	len = ft_nmbrlen(n);
 	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	res[len] = '\0';
-	while(n)
-	{
-		res[--len] = n % 10 + '0';
-		n /= 10;
-	}
-	if (sign == 'n')
+	if (n < 0)
 		res[0] = '-';
+	len -=1;
+	while(n / 10 != 0)
+	{
+		res[len] = ((n < 0) ? -(n % 10) : (n % 10)) + '0';
+		n /= 10;
+		len--;
+	}
+	res[len] = ((n < 0) ? -(n) : n) + '0';
 	return (res);
 }
